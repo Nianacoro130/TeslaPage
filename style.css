@@ -1,0 +1,233 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {  
+    --color-default: #171a20;
+}
+
+body {
+    color: var(--color-default);
+    font-family: 'M PLUS 1', sans-serif;
+}
+
+html {
+    scroll-behavior:smooth;
+}
+
+.screen {
+    display: none;
+}
+
+@media (min-width : 768px){
+     .screen {
+        display: initial;
+    }
+
+}
+
+
+
+header {
+    display: grid;
+    grid-template-columns: auto 1fr auto ;
+    position: fixed;
+    top: 10px;
+    z-index: 2;
+    width: 100%;
+    
+}
+
+header a {
+    color: var(--color-default);
+    font-weight:500;
+}
+
+header a:hover {
+    background-color: rgba(150, 148, 148, 0.227);
+    border-radius: 4px;
+    transition: all 0.9s ease-out;
+}
+
+.logo {
+    height: 12px;
+    width: 100px;
+    color: var(--color-default);
+    padding: 2px 15px;
+    
+}
+
+.navbar-center, .navbar-right {
+    text-align: center;
+    
+}
+.navbar-center a , .navbar-right a  {
+    text-decoration: none;
+    padding: 5px 10px;
+}
+
+.navbar-right {
+    text-align: right;
+}
+
+
+section {
+    height: 100vh;
+    background-size: cover;
+    background-position: center center;
+}
+
+
+section .tesla-content {
+    width: 100%;
+    height: 100vh;
+    padding-top: 15vh;
+    padding-bottom: 10vh;
+    text-align: center;
+    display: grid;
+    grid-template-rows: min-content auto min-content;
+
+}
+
+section h1 {
+    font-size: 2.5rem;
+    font-weight:500 ;
+}
+
+section a {
+    color: var(--color-default);
+}
+
+
+
+
+section .buttons a {
+    font-family:"Gotham SSm", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 14px;
+    line-height: 16.8px;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 12px 50px;
+    border-radius: 4px;
+    box-shadow:rgba(0, 0, 0, 0) 0px 0px 0px 2px inset;
+    text-transform: uppercase;
+    
+   
+}
+
+
+@media (max-width : 768px){
+    section .buttons  {
+        display: grid;
+        row-gap: 10px;
+        max-width: 640px;
+        margin: 0 auto;
+        grid-template-columns: 1fr, 1fr;
+        column-gap: 20px;
+    }
+
+}
+
+section .buttons a:first-child{
+    background: #171a20;
+    opacity: 80%;
+    color : #ffffff;
+}
+
+section .buttons a:nth-child(2){
+    background: #f4f4f4;
+    opacity: 60%;
+    color:#393c41 ;
+    line-height: 20px;
+}
+
+aside {
+    position: fixed;
+    top:0;
+    right: -360px;
+    width: 300px;
+    background-color: #ffffff;
+    padding: 50px 30px;
+    z-index : 4;
+    height: 100vh;
+    text-align: left;
+    transition:  right 0.5s ease-out;
+}
+
+aside.active {
+    right: 0;
+}
+
+aside a {
+    display: block;
+    text-decoration: none;
+    color: var(--color-default);
+    padding: 10px 0 ;
+}
+
+aside button.close {
+    position: absolute;
+    right: 15px;
+    top: 2px;
+    font-size: 44px;
+    border: 0;
+    background-color: transparent;
+    padding: 10px;
+    cursor: pointer;
+
+}
+
+.blur-screen{
+   display: none;
+   position: fixed;
+   inset: 0;
+   background-color: rgba(0, 0, 0,0.35);
+   backdrop-filter: blur(5px);
+}
+
+.blur-screen.active {
+    display: block;
+}
+
+footer {
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-bar {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    height: 50px;
+}
+
+.footer-bar a{
+    text-align: center;
+    text-decoration: none;
+    color: #5c5e62;
+    margin-right: 5px;
+    font-size: 12px;
+    font-weight: 500;
+
+    padding: 5px 5px 0;
+
+}
+
+@media (max-width : 768px){
+    .footer-bar {
+        margin-top: 100px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+
+    }
+
+    .footer-bar a{
+        text-align:center;
+        font-size: 15px;
+    }
+
+}
